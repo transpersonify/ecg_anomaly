@@ -1,35 +1,29 @@
 ecg_anomaly
 ==============================
 
-This repo explores different ML models for timeseries analysis and anomaly detection in ECG data.
+This repo explores different ML models for timeseries analysis and anomaly detection in ECG data downloaded from Kaggle  (https://www.kaggle.com/datasets/shayanfazeli/heartbeat)
 
 ----------
 
-        The MIT-BIH Dataset contains total of 48 half-hour long 2-channel recordings obtained from 47 patients (25 men and 22 women) between the ages of 23 and 89.
-        Each recording is annotated with the timing and type of arrhythmia (or normal beat) for each heartbeat.
-        A cardiologist has labeled the beats to identify various types of arrhythmias, such as:
+######  The dataset is already a curated one, and already artificially cleaned. So we don't need a lot of domain knowledge at this point. 
+
+###### The main purpose of this effort is to set the data science artchitecture in place, focus on the ML Flow and training different Models, without extensive focus on data engineering part at this stage.  We will explore a few more datasets later on, which may require data engineering. 
+
+There are two separate datasets: 
+	One from Physionet's arrhythmia dataset MIT-BIH, containing 5-classes (Normal heartbeats and others - Classes: ['N': 0, 'S': 1, 'V': 2, 'F': 3, 'Q': 4])
+	Second from PTB dataset, where there are 2 classes: Normal vs Abnormal heartbeat.
+	
+Individual heartbeat examples are sampled at 125 Hz, and padded to make them the same length (188 samples per segment). 
+
+The data is also nicely divided into train and test for MIT-BIH and abnormal vs normal heartbeats for PTB dataset.
+
+The last column of each sample contains label. 
+
+Idea for transfer learning would be to train a model on one dataset, take the trained model and use it for minimal training on another dataset.
+
+
+
 -----------
-        Normal beats (N)
-        Premature ventricular contractions (PVC)
-        Atrial fibrillation (AF)
-        Left or right bundle branch block (LBBB/RBBB)
-
-Sampling Rate:
-
-    The ECG signals were sampled at 360 samples per second per channel.
-    The signals are high-resolution (11-bit), making them ideal for precision analysis.
-    ('MLII' and 'V5' are channel  names).
-    
-
-Channels:
-
-    Most recordings include two ECG lead signals recorded simultaneously.
-
-Application:
-
-    The dataset is widely used to develop and evaluate algorithms for arrhythmia detection, heart rate variability analysis, and other cardiac event classification tasks.
-    It's useful for both supervised learning (using annotated data) and unsupervised anomaly detection (detecting irregular beats ).
-    
 
 Project Organization
 ------------
