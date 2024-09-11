@@ -2,9 +2,12 @@ ecg_anomaly
 ==============================
 
 This repo explores different ML models for timeseries analysis and anomaly detection in ECG data.
-The MIT-BIH Dataset contains total of 48 half-hour long 2-channel recordings obtained from 47 patients (25 men and 22 women) between the ages of 23 and 89.
-Each recording is annotated with the timing and type of arrhythmia (or normal beat) for each heartbeat.
-A cardiologist has labeled the beats to identify various types of arrhythmias, such as:
+
+----------
+
+        The MIT-BIH Dataset contains total of 48 half-hour long 2-channel recordings obtained from 47 patients (25 men and 22 women) between the ages of 23 and 89.
+        Each recording is annotated with the timing and type of arrhythmia (or normal beat) for each heartbeat.
+        A cardiologist has labeled the beats to identify various types of arrhythmias, such as:
 -----------
         Normal beats (N)
         Premature ventricular contractions (PVC)
